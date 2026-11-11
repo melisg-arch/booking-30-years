@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 30th, Booking.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=Raleway:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cloud:#F7F9F2; --spark:#D8FF85; --pine:#0A211F; --leaf:#2A4E45;
+  --earth:#292423; --sky:#A1D4FF; --sea:#19546E; --stone:#E6D3B0;
+  --peach:#FF9595; --lavender:#FFAFED; --mint:#8DFDBA;
+  --display:'Inter Tight',system-ui,sans-serif;
+  --inter:'Inter',system-ui,sans-serif;
+  --body:'Raleway',system-ui,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --radius:16px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--pine);color:var(--cloud);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.03em;line-height:1}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.wrap{width:min(1280px,100% - 48px);margin-inline:auto}
+.logo{display:block;height:auto}
+.logo path{fill:currentColor}
+
+/* hero */
+.hero{background:var(--pine);text-align:center;padding-bottom:clamp(88px,12vw,180px)}
+.nav{display:flex;justify-content:center;padding:34px 0}
+.nav .logo{width:132px;color:var(--cloud)}
+.hero h1{margin-top:clamp(40px,7vw,104px);font-family:var(--inter);font-weight:700;font-size:clamp(58px,12vw,176px);line-height:.92;letter-spacing:-.045em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.28em;margin-bottom:-.2em}
+.hero h1 .line>span{display:block;transform:translateY(105%);animation:slide 1.2s var(--ease) .15s forwards}
+.hero h1 .line:nth-child(2)>span{animation-delay:.35s}
+.hero h1 .it{color:var(--spark);font-weight:400;font-size:1.04em;letter-spacing:-.03em}
+.hero .sub{font-family:var(--display);font-size:clamp(22px,2.8vw,40px);letter-spacing:-.015em;margin-top:clamp(32px,5vw,72px);opacity:0;animation:fade 1s var(--ease) .9s forwards}
+@keyframes slide{to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* thanks */
+.thanks{background:var(--cloud);color:var(--pine);padding:clamp(80px,11vw,168px) 0}
+.thanks .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.thanks .wrap.vidwrap{display:block;margin-bottom:clamp(48px,7vw,104px)}
+.vid{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--pine);aspect-ratio:16/9}
+.vid video{display:block;width:100%;height:100%;object-fit:cover;background:var(--pine)}
+.vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;padding:0;cursor:pointer;background:rgba(10,33,31,.28);transition:opacity .3s ease,background .3s ease}
+.vid .play:hover{background:rgba(10,33,31,.12)}
+.vid .play:focus-visible{outline:3px solid var(--spark);outline-offset:-6px}
+.vid .play span{display:flex;align-items:center;justify-content:center;width:clamp(72px,9vw,128px);aspect-ratio:1;border-radius:50%;background:var(--spark)}
+.vid .play svg{width:34%;height:auto;margin-left:8%;fill:var(--pine)}
+.vid.playing .play{opacity:0;pointer-events:none}
+.thanks h2{font-size:clamp(46px,6.6vw,96px);line-height:.98}
+.thanks h2 .it{display:block;font-size:1.06em}
+.thanks .copy{font-size:clamp(18px,1.6vw,22px);max-width:32em;padding-top:.6em}
+.thanks .copy p+p{margin-top:1.2em}
+.thanks .copy p:last-child{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.4vw,34px);line-height:1.1;letter-spacing:-.02em}
+
+/* offer sections: pine card on colour */
+.offer{padding:clamp(24px,3vw,48px) 0 clamp(56px,7vw,112px)}
+.offer.sky{background:var(--sky);color:var(--pine);--accent:var(--spark)}
+.card{position:relative;background:var(--pine);color:var(--cloud);border-radius:var(--radius);padding:clamp(28px,4.4vw,72px);min-height:clamp(560px,53vw,780px);display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,4vw,64px)}
+.card>.ico{position:absolute;top:clamp(28px,4.4vw,72px);right:clamp(28px,4.4vw,72px);width:clamp(40px,5.6vw,84px);height:auto;fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.card .row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:end}
+.card .r{display:flex;flex-direction:column;justify-content:flex-end}
+.card h2{font-size:clamp(40px,6vw,92px);line-height:.95;padding-right:clamp(48px,7vw,110px)}
+.card h2 .it{display:block;font-size:1.06em;color:var(--accent)}
+.card .r p{font-size:clamp(17px,1.5vw,21px);max-width:30em}
+.card .r p+p{margin-top:1.1em}
+.num{font-family:var(--serif);color:var(--accent);font-size:clamp(140px,15.5vw,230px);line-height:.72;letter-spacing:-.04em;margin-left:-.03em}
+.cap{display:flex;flex-direction:column;gap:.3em;margin-top:clamp(16px,2vw,28px)}
+.cap .it{font-size:clamp(28px,3.4vw,50px);line-height:1}
+.cap b{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.1vw,46px);letter-spacing:-.03em;line-height:1}
+
+/* hours detail under the card */
+.below{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding:clamp(40px,6vw,88px) clamp(0px,1vw,16px) 0}
+.below h3{font-size:clamp(28px,3vw,44px);line-height:1.02;margin-bottom:20px}
+.below h3 .it{display:block;font-size:1.06em}
+.below p{font-size:clamp(17px,1.4vw,20px);max-width:30em}
+.below p+p{margin-top:1em}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tags .brk{flex-basis:100%;height:0;margin:-10px 0 0}
+.tags span{border:1px solid var(--pine);border-radius:999px;padding:9px 18px;font-family:var(--display);font-size:15px}
+
+/* next */
+.next{background:var(--cloud);color:var(--pine);padding:clamp(80px,11vw,168px) 0}
+.next h2{font-size:clamp(46px,7vw,104px);line-height:.96}
+.next h2 .it{font-size:1.06em}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);margin-top:clamp(40px,6vw,88px)}
+.step{border-top:1px solid var(--pine);padding-top:26px}
+.step .k{font-family:var(--serif);font-style:italic;font-size:clamp(44px,5vw,72px);line-height:.9;color:var(--leaf);display:block;margin-bottom:16px}
+.step p{font-size:clamp(18px,1.6vw,22px);max-width:20em}
+.step.pick{background:var(--pine);color:var(--cloud);border:0;border-radius:var(--radius);padding:clamp(24px,2.6vw,40px)}
+.step.pick .k{color:var(--spark)}
+.step.pick p{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em}
+.step.pick p.more{font-family:var(--body);font-weight:400;font-size:clamp(16px,1.3vw,19px);line-height:1.5;letter-spacing:0;margin-top:1em;max-width:26em;opacity:.9}
+.nb{margin-top:clamp(32px,4vw,56px);max-width:36em;font-size:clamp(17px,1.5vw,21px)}
+
+/* close */
+.close{background:var(--pine);color:var(--cloud);text-align:center;padding:clamp(96px,14vw,210px) 0 56px}
+.close h2{font-family:var(--inter);font-weight:700;font-size:clamp(56px,11vw,160px);line-height:.92;letter-spacing:-.045em}
+.close h2 .it{display:block;color:var(--spark);font-weight:400;font-size:1.04em;letter-spacing:-.03em}
+.close .with{font-family:var(--display);font-size:clamp(22px,2.8vw,40px);letter-spacing:-.015em;margin-top:clamp(36px,5vw,64px)}
+.close .with .it{color:var(--spark);font-size:1.3em;letter-spacing:0;margin-left:.1em}
+.close .logo{width:min(150px,44%);margin:clamp(64px,9vw,112px) auto 0;color:var(--cloud)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .thanks .wrap,.card .row,.below{grid-template-columns:minmax(0,1fr)}
+  .card{min-height:0}
+  .card .r{justify-content:flex-start}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .nav .logo{width:108px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero h1 .line>span{transform:none}
+  .hero .sub,.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="nav"><svg class="logo" role="img" aria-label="Superside" viewBox="0 0 1920 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M998.8 336.6C999.1 282.21 963.16 245.96 911.23 245.96C856.54 245.96 816.91 286.52 816.91 340.9C816.91 395.28 857.16 436.46 912.77 436.46C953.94 436.46 986.82 414.33 998.18 374.08H959.47C953.63 391.29 936.74 400.2 914.61 400.2C883.89 400.2 862.69 381.15 859 353.5H997.26C998.18 347.66 998.8 344.9 998.8 336.6ZM860.54 320.93C866.68 296.65 886.03 281.6 910.93 281.6C935.83 281.6 954.86 297.27 958.55 320.93H860.54ZM1645.32 400.19C1614.6 400.19 1593.39 381.14 1589.7 353.49H1727.96C1728.89 347.65 1729.5 344.89 1729.5 336.59C1729.81 282.2 1693.86 245.95 1641.94 245.95C1587.24 245.95 1547.61 286.51 1547.61 340.89C1547.61 395.27 1587.86 436.45 1643.47 436.45C1684.64 436.45 1717.53 414.32 1728.89 374.07H1690.17C1684.34 391.28 1667.43 400.19 1645.32 400.19ZM1641.63 281.59C1666.82 281.59 1685.56 297.26 1689.25 320.92H1591.24C1597.39 296.64 1616.75 281.59 1641.63 281.59ZM1489.23 270.83C1474.17 255.16 1453.59 245.94 1429.62 245.94C1378.93 245.94 1339.6 286.81 1339.6 341.81C1339.6 396.81 1380.16 436.44 1429.62 436.44C1453.29 436.44 1474.17 427.22 1489.23 411.55V432.68H1530.09V194.35H1489.23V270.84V270.83ZM1434.85 398.97C1403.51 398.97 1381.08 375.31 1381.08 341.82C1381.08 308.33 1403.51 284.67 1434.85 284.67C1466.19 284.67 1489.54 308.01 1489.54 341.82C1489.54 375.63 1466.8 398.97 1434.85 398.97ZM1325.62 214.43C1325.62 228.24 1315.68 238.18 1301.87 238.18C1288.06 238.18 1277.85 228.52 1277.85 214.71C1277.85 200.9 1287.79 190.96 1301.87 190.96C1315.95 190.96 1325.62 200.62 1325.62 214.43ZM1282.22 249.88H1321.24V432.7H1282.22V249.89V249.88ZM1191.74 279.45C1169.62 279.45 1165.62 293.58 1165.62 300.34C1165.62 309.56 1172.69 315.7 1192.04 320.62L1214.16 326.46C1247.96 335.68 1263.63 352.27 1263.63 378.69C1263.32 413.1 1235.98 436.45 1197.26 436.45C1158.54 436.45 1126.9 417.09 1122.6 375.92H1156.09C1160.08 393.74 1174.22 402.96 1194.8 402.96C1213.85 402.96 1224.91 394.36 1224.91 382.07C1224.91 371.93 1217.54 365.79 1198.49 360.56L1176.98 354.41C1145.95 345.5 1127.51 330.44 1127.51 301.56C1127.51 265.92 1155.78 245.95 1191.11 245.95C1226.44 245.95 1256.86 268.99 1263.01 300.03L1263.93 304.64H1227.98L1227.06 302.18C1221.84 288.35 1209.55 279.44 1191.73 279.44L1191.74 279.45ZM1121.64 286C1121.64 286 1113.72 283.44 1103.25 283.44C1074.67 283.44 1056.55 301.8 1056.55 331.6V432.69H1015.99V249.89H1056.55V271.4C1068.23 254.5 1084.2 245.97 1103.56 245.97C1112.8 245.97 1121.64 248.74 1121.64 248.74V286.02V286ZM775.72 272.25C759.43 255.39 736.7 245.88 713.04 245.88C689.38 245.88 667.87 256 653.12 274.7V249.87H612.56V498.82H653.12V408.38C668.18 426.47 688.76 436.58 713.04 436.58C761.27 436.58 801.52 398.56 801.52 341.24C801.52 314.25 792.3 289.73 775.72 272.25ZM707.2 398.87C675.86 398.87 653.12 374.96 653.12 341.24C653.12 307.52 675.86 283.6 706.89 283.6C737.92 283.6 760.97 308.43 760.97 341.24C760.97 374.05 738.84 398.87 707.2 398.87ZM587.98 432.69H546.81V416.48C535.13 429.38 518.54 436.45 498.57 436.45C458.32 436.45 428.21 408.8 428.21 363.63V288.89H469.38V359.03C469.38 387.6 487.2 398.67 507.48 398.67C531.75 398.67 546.81 381.77 546.81 354.73V249.88H587.98V432.7V432.69ZM412.72 369.65C415.69 412.79 377.36 436.72 347.76 436.65C333.59 436.62 318.1 431.03 305.21 422.07L284.72 407.85C268.87 397.03 264.33 395.17 258.35 395.15C243.87 395.11 234.49 405.26 235.4 418.51C235.72 423.13 235.89 426.83 240.05 432.39L196.06 432.28C192.8 426.11 191.04 418.71 190.59 412.24C188.49 381.74 214.86 353.15 253.89 353.24C269.95 353.28 286.65 358.25 299.9 367.83L329.04 388.85C334.65 392.56 339.18 394.42 345.48 394.44C363.74 394.48 370.19 378.48 369.47 368C369 361.22 365.43 355.05 359.47 350.72L301.79 308.37C285.56 296.62 275.75 277.5 274.37 257.47C271.41 214.33 309.73 190.4 339.33 190.47C353.5 190.5 368.99 196.09 381.88 205.05L402.37 219.27C418.22 230.09 422.76 231.95 428.74 231.96C443.22 232 450.92 221.85 450.01 208.6C449.69 203.98 449.52 200.28 445.36 194.72L489.35 194.83C492.61 201 499.04 238.77 472.42 260.29C436.52 289.31 400.42 268.86 387.18 259.27L358.04 238.25C352.43 234.54 347.9 232.68 341.6 232.66C323.34 232.62 316.89 248.62 317.59 258.79C318.06 265.57 321.65 272.05 327.3 276.37L385.29 318.72C401.5 330.16 411.35 349.9 412.71 369.62L412.72 369.65Z" />
+</svg>
+</div>
+    <h1><span class="line"><span>Happy 30th</span></span><span class="line"><span class="it">Booking.com</span></span></h1>
+    <p class="sub">Here’s to what’s next</p>
+  </div>
+</header>
+
+<section class="thanks">
+  <div class="wrap vidwrap">
+    <div class="vid reveal" id="vid">
+      <video id="vidEl" src="Booking30_video_v10_720p_under9MB.mp4#t=0.1" preload="metadata" playsinline aria-label="Happy 30th, Booking.com video"></video>
+      <button class="play" id="vidPlay" type="button" aria-label="Play video"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 1.5v21L22 12z"/></svg></span></button>
+    </div>
+  </div>
+  <div class="wrap">
+    <h2 class="reveal">A quick <span class="it">thank you</span></h2>
+    <div class="copy reveal">
+      <p>Thirty years of bringing people closer to the places and people they love. We’ve been lucky to work alongside your teams for the past few years, and we’ve loved it. The briefs, the feedback, even the “can we just try one more version?”</p>
+      <p>Thank you for letting us be part of your story. Happy birthday.</p>
+    </div>
+  </div>
+</section>
+
+<!-- offer: the hours -->
+<section class="offer sky">
+  <div class="wrap">
+    <div class="card reveal" id="hours">
+      <svg class="ico" viewBox="0 0 140 150" aria-hidden="true"><path d="M6 6L134 52Q139 55 132 58L72 73L52 140Q48 147 44 140Z"/></svg>
+      <h2>A little something<span class="it">for you</span></h2>
+      <div class="row">
+        <div>
+          <div class="num" id="count" aria-label="30">30</div>
+          <div class="cap"><span class="it">hours of added value.</span></div>
+        </div>
+        <div class="r">
+          <p>A card on its own didn’t feel like enough, and we couldn’t fit a cake in an email. So here’s the next best thing: 30 hours of creative work, added to your account as a little extra value.</p>
+          <p>They sit on top of your current hours, so you can use them on anything you like. That project you keep meaning to start, or something just for fun. Any project, any skill. They’re yours.</p>
+        </div>
+      </div>
+    </div>
+    <div class="below reveal">
+      <div>
+        <h3>How we’re <span class="it">sharing it</span></h3>
+        <p>We’ve divided the hours across your accounts by size, so the teams we work with most get the biggest slice. Your exact amount will be discussed in our next status meeting.</p>
+        <p>In January, we’ll add these hours to your current account hours, so you can put them on whatever project you like. Nothing to set up, and work carries on as usual.</p>
+      </div>
+      <div>
+        <h3>The small print <span class="it">(we promise it’s small)</span></h3>
+        <p>Like a Booster, these hours are good for three months. They arrive in January, so they need using by the end of March. There are no limits on project type or skill.</p>
+        <div class="tags"><span>Arrives in January</span><span>Use by end of March</span><i class="brk"></i><span>Any project type</span><span>Any skill</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next">
+  <div class="wrap">
+    <h2 class="reveal">What happens <span class="it">now</span></h2>
+    <div class="steps">
+      <div class="step reveal"><span class="k">1</span><p>Not much, really. There’s nothing to do today except enjoy the celebrations.</p></div>
+      <div class="step reveal"><span class="k">2</span><p>Your Superside team will be in touch to make everything easy.</p></div>
+      <div class="step pick reveal"><span class="k">3</span><p>Your 30 hours<br>arrive in January.</p><p class="more">They’re yours to use until the end of March. Until then, start dreaming up what you’d love to make with them. No rush.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="close">
+  <div class="wrap">
+    <h2 class="reveal">Have the best <span class="it">birthday</span></h2>
+    <p class="with reveal">With love, <span class="it">your Superside team</span></p>
+    <svg class="logo" role="img" aria-label="Superside" viewBox="0 0 1920 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M998.8 336.6C999.1 282.21 963.16 245.96 911.23 245.96C856.54 245.96 816.91 286.52 816.91 340.9C816.91 395.28 857.16 436.46 912.77 436.46C953.94 436.46 986.82 414.33 998.18 374.08H959.47C953.63 391.29 936.74 400.2 914.61 400.2C883.89 400.2 862.69 381.15 859 353.5H997.26C998.18 347.66 998.8 344.9 998.8 336.6ZM860.54 320.93C866.68 296.65 886.03 281.6 910.93 281.6C935.83 281.6 954.86 297.27 958.55 320.93H860.54ZM1645.32 400.19C1614.6 400.19 1593.39 381.14 1589.7 353.49H1727.96C1728.89 347.65 1729.5 344.89 1729.5 336.59C1729.81 282.2 1693.86 245.95 1641.94 245.95C1587.24 245.95 1547.61 286.51 1547.61 340.89C1547.61 395.27 1587.86 436.45 1643.47 436.45C1684.64 436.45 1717.53 414.32 1728.89 374.07H1690.17C1684.34 391.28 1667.43 400.19 1645.32 400.19ZM1641.63 281.59C1666.82 281.59 1685.56 297.26 1689.25 320.92H1591.24C1597.39 296.64 1616.75 281.59 1641.63 281.59ZM1489.23 270.83C1474.17 255.16 1453.59 245.94 1429.62 245.94C1378.93 245.94 1339.6 286.81 1339.6 341.81C1339.6 396.81 1380.16 436.44 1429.62 436.44C1453.29 436.44 1474.17 427.22 1489.23 411.55V432.68H1530.09V194.35H1489.23V270.84V270.83ZM1434.85 398.97C1403.51 398.97 1381.08 375.31 1381.08 341.82C1381.08 308.33 1403.51 284.67 1434.85 284.67C1466.19 284.67 1489.54 308.01 1489.54 341.82C1489.54 375.63 1466.8 398.97 1434.85 398.97ZM1325.62 214.43C1325.62 228.24 1315.68 238.18 1301.87 238.18C1288.06 238.18 1277.85 228.52 1277.85 214.71C1277.85 200.9 1287.79 190.96 1301.87 190.96C1315.95 190.96 1325.62 200.62 1325.62 214.43ZM1282.22 249.88H1321.24V432.7H1282.22V249.89V249.88ZM1191.74 279.45C1169.62 279.45 1165.62 293.58 1165.62 300.34C1165.62 309.56 1172.69 315.7 1192.04 320.62L1214.16 326.46C1247.96 335.68 1263.63 352.27 1263.63 378.69C1263.32 413.1 1235.98 436.45 1197.26 436.45C1158.54 436.45 1126.9 417.09 1122.6 375.92H1156.09C1160.08 393.74 1174.22 402.96 1194.8 402.96C1213.85 402.96 1224.91 394.36 1224.91 382.07C1224.91 371.93 1217.54 365.79 1198.49 360.56L1176.98 354.41C1145.95 345.5 1127.51 330.44 1127.51 301.56C1127.51 265.92 1155.78 245.95 1191.11 245.95C1226.44 245.95 1256.86 268.99 1263.01 300.03L1263.93 304.64H1227.98L1227.06 302.18C1221.84 288.35 1209.55 279.44 1191.73 279.44L1191.74 279.45ZM1121.64 286C1121.64 286 1113.72 283.44 1103.25 283.44C1074.67 283.44 1056.55 301.8 1056.55 331.6V432.69H1015.99V249.89H1056.55V271.4C1068.23 254.5 1084.2 245.97 1103.56 245.97C1112.8 245.97 1121.64 248.74 1121.64 248.74V286.02V286ZM775.72 272.25C759.43 255.39 736.7 245.88 713.04 245.88C689.38 245.88 667.87 256 653.12 274.7V249.87H612.56V498.82H653.12V408.38C668.18 426.47 688.76 436.58 713.04 436.58C761.27 436.58 801.52 398.56 801.52 341.24C801.52 314.25 792.3 289.73 775.72 272.25ZM707.2 398.87C675.86 398.87 653.12 374.96 653.12 341.24C653.12 307.52 675.86 283.6 706.89 283.6C737.92 283.6 760.97 308.43 760.97 341.24C760.97 374.05 738.84 398.87 707.2 398.87ZM587.98 432.69H546.81V416.48C535.13 429.38 518.54 436.45 498.57 436.45C458.32 436.45 428.21 408.8 428.21 363.63V288.89H469.38V359.03C469.38 387.6 487.2 398.67 507.48 398.67C531.75 398.67 546.81 381.77 546.81 354.73V249.88H587.98V432.7V432.69ZM412.72 369.65C415.69 412.79 377.36 436.72 347.76 436.65C333.59 436.62 318.1 431.03 305.21 422.07L284.72 407.85C268.87 397.03 264.33 395.17 258.35 395.15C243.87 395.11 234.49 405.26 235.4 418.51C235.72 423.13 235.89 426.83 240.05 432.39L196.06 432.28C192.8 426.11 191.04 418.71 190.59 412.24C188.49 381.74 214.86 353.15 253.89 353.24C269.95 353.28 286.65 358.25 299.9 367.83L329.04 388.85C334.65 392.56 339.18 394.42 345.48 394.44C363.74 394.48 370.19 378.48 369.47 368C369 361.22 365.43 355.05 359.47 350.72L301.79 308.37C285.56 296.62 275.75 277.5 274.37 257.47C271.41 214.33 309.73 190.4 339.33 190.47C353.5 190.5 368.99 196.09 381.88 205.05L402.37 219.27C418.22 230.09 422.76 231.95 428.74 231.96C443.22 232 450.92 221.85 450.01 208.6C449.69 203.98 449.52 200.28 445.36 194.72L489.35 194.83C492.61 201 499.04 238.77 472.42 260.29C436.52 289.31 400.42 268.86 387.18 259.27L358.04 238.25C352.43 234.54 347.9 232.68 341.6 232.66C323.34 232.62 316.89 248.62 317.59 258.79C318.06 265.57 321.65 272.05 327.3 276.37L385.29 318.72C401.5 330.16 411.35 349.9 412.71 369.62L412.72 369.65Z" />
+</svg>
+
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv=document.querySelectorAll('.reveal');
+  var cnt=document.getElementById('count'),counted=false;
+  function countUp(){
+    if(counted||reduce)return;counted=true;
+    var t0=null,total=1600;
+    function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min((ts-t0)/total,1);
+      cnt.textContent=Math.round(30*(1-Math.pow(1-p,3)));
+      if(p<1)requestAnimationFrame(step)
+    }
+    cnt.textContent='0';requestAnimationFrame(step);
+  }
+  var vid=document.getElementById('vid'),vEl=document.getElementById('vidEl'),vBtn=document.getElementById('vidPlay');
+  if(vid&&vEl&&vBtn){
+    vBtn.addEventListener('click',function(){
+      vEl.controls=true;vid.classList.add('playing');
+      var p=vEl.play();if(p&&p.catch)p.catch(function(){vid.classList.remove('playing');vEl.controls=false});
+    });
+    vEl.addEventListener('ended',function(){vEl.controls=false;vid.classList.remove('playing');vEl.currentTime=0});
+  }
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');if(e.target.id==='hours')countUp();io.unobserve(e.target)}
+    })},{threshold:.2});
+    rv.forEach(function(el){io.observe(el)});
+  } else {rv.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
